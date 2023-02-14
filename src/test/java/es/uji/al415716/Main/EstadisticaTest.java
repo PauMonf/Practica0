@@ -1,9 +1,6 @@
 package es.uji.al415716.Main;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,9 +12,11 @@ class EstadisticaTest {
     double[] caso3 = {-1, -2, -3, -4, -5};
     double[] caso4 = {0};
     double[] caso5 = new double[0];
+    double RAIZDEDOS;
     @BeforeEach
     void setUp() {
         estadistica=new Estadistica();
+        RAIZDEDOS=Math.sqrt(2);
     }
 
     @AfterEach
@@ -48,8 +47,8 @@ class EstadisticaTest {
     @DisplayName("Test de la desviación:")
     void desviacionEstandar() {
         assertEquals(0, estadistica.DesviacionEstandar(caso1));
-        assertEquals(Math.sqrt(2), estadistica.DesviacionEstandar(caso2));
-        assertEquals(Math.sqrt(2), estadistica.DesviacionEstandar(caso3));
+        assertEquals(RAIZDEDOS, estadistica.DesviacionEstandar(caso2));
+        assertEquals(RAIZDEDOS, estadistica.DesviacionEstandar(caso3));
         assertEquals(0,estadistica.DesviacionEstandar(caso4));
         assertEquals(0,estadistica.DesviacionEstandar(caso5));
     }
